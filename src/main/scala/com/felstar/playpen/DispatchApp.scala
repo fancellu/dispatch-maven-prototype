@@ -10,7 +10,7 @@ object DispatchApp {
   def main(args : Array[String]) {
 
    try {
-    val svc = url("http://mymovieapi.com/?q=matrix&type=xml")
+    val svc = host("mymovieapi.com") <<? Map("q" ->"matrix","type"-> "xml")                
     val pp=new PrettyPrinter(80,2)
 
     // returns immediately, no waiting
